@@ -99,6 +99,14 @@ $twitch-colors-black: muted-ice, muted-jiggle, muted-worm, muted-isabelle, muted
   .text-twitch-#{$c} {
     @include text(map-get($colors, $c));
   }
+
+  .link-twitch-#{$c} > a {
+    @include link(map-get($colors, $c));
+  }
+
+  .link-twitch-#{$c}:hover > a {
+    @include link-hover(map-get($colors, $c));
+  }
 }
 
 @each $c in $twitch-colors-black {
@@ -116,5 +124,13 @@ $twitch-colors-black: muted-ice, muted-jiggle, muted-worm, muted-isabelle, muted
 
   .text-twitch-#{$c} {
     @include text(map-get($colors, $c));
+  }
+
+  .link-twitch-#{$c} > a {
+    @include link(map-get($colors, $c));
+  }
+
+  .link-twitch-#{$c}:hover > a {
+    @include link-hover(map-get($colors, $c));
   }
 }
