@@ -1,0 +1,120 @@
+$twitch-purple: #6441A4;
+$twitch-ice: #F0F0FF;
+$twitch-blackops: #000000;
+$twitch-muted-ice: #F0F0FF;
+$twitch-muted-jiggle: #FAB4FF;
+$twitch-muted-worm: #FACDCD;
+$twitch-muted-isabelle: #FEEE85;
+$twitch-muted-droid: #BEFAE1;
+$twitch-muted-wipeout: #00C8AF;
+$twitch-muted-smoke: #D2D2E6;
+$twitch-muted-widow: #BFABFF;
+$twitch-muted-peach: #FC6675;
+$twitch-muted-pac-man: #FFCA5F;
+$twitch-muted-felicia: #57BEE6;
+$twitch-muted-sonic: #0014A5;
+$twitch-accent-dragon: #8205B4;
+$twitch-accent-cuddle: #FA1ED2;
+$twitch-accent-bandit: #FF6905;
+$twitch-accent-lightning: #FAFA19;
+$twitch-accent-ko: #BEFF00;
+$twitch-accent-mega: #00FAFA;
+$twitch-accent-nights: #41145F;
+$twitch-accent-osu: #BE0078;
+$twitch-accent-sniper: #FA2828;
+$twitch-accent-egg: #00FA05;
+$twitch-accent-legend: #69FFC3;
+$twitch-accent-zero: #1E69FF;
+
+@import "~@mrgoodbytes8667/style-brands/css/brand";
+
+$colors: (
+        purple : $twitch-purple,
+        muted-ice : $twitch-muted-ice,
+        muted-jiggle : $twitch-muted-jiggle,
+        muted-worm : $twitch-muted-worm,
+        muted-isabelle : $twitch-muted-isabelle,
+        muted-droid : $twitch-muted-droid,
+        muted-wipeout : $twitch-muted-wipeout,
+        muted-smoke : $twitch-muted-smoke,
+        muted-widow : $twitch-muted-widow,
+        muted-peach : $twitch-muted-peach,
+        muted-pac-man : $twitch-muted-pac-man,
+        muted-felicia : $twitch-muted-felicia,
+        muted-sonic : $twitch-muted-sonic,
+        accent-dragon : $twitch-accent-dragon,
+        accent-cuddle : $twitch-accent-cuddle,
+        accent-bandit : $twitch-accent-bandit,
+        accent-lightning: $twitch-accent-lightning,
+        accent-ko : $twitch-accent-ko,
+        accent-mega : $twitch-accent-mega,
+        accent-nights : $twitch-accent-nights,
+        accent-osu : $twitch-accent-osu,
+        accent-sniper : $twitch-accent-sniper,
+        accent-egg : $twitch-accent-egg,
+        accent-legend : $twitch-accent-legend,
+        accent-zero : $twitch-accent-zero,
+);
+
+$twitch-colors-white: purple, accent-dragon, accent-cuddle, accent-bandit, accent-lightning, accent-ko, accent-mega, accent-nights, accent-osu, accent-sniper, accent-egg, accent-legend, accent-zero;
+$twitch-colors-black: muted-ice, muted-jiggle, muted-worm, muted-isabelle, muted-droid, muted-wipeout, muted-smoke, muted-widow, muted-peach, muted-pac-man, muted-felicia, muted-sonic;
+
+.btn-twitch {
+  @include btn($twitch-purple, $twitch-ice);
+}
+
+.btn-twitch:hover {
+  @include btn-hover($twitch-purple, $twitch-ice);
+}
+
+.btn-twitch-white {
+  @include btn($twitch-ice, $twitch-purple);
+}
+
+.btn-twitch-white:hover {
+  @include btn-hover($twitch-ice, $twitch-purple);
+}
+
+.bg-twitch {
+  @include bg($twitch-purple);
+}
+
+.text-twitch {
+  @include text($twitch-purple);
+}
+
+@each $c in $twitch-colors-white {
+  .btn-twitch-#{$c} {
+    @include btn(map-get($colors, $c), $twitch-ice);
+  }
+
+  .btn-twitch-#{$c}:hover {
+    @include btn-hover(map-get($colors, $c), $twitch-ice);
+  }
+
+  .bg-twitch-#{$c} {
+    @include bg(map-get($colors, $c));
+  }
+
+  .text-twitch-#{$c} {
+    @include text(map-get($colors, $c));
+  }
+}
+
+@each $c in $twitch-colors-black {
+  .btn-twitch-#{$c} {
+    @include btn(map-get($colors, $c), $twitch-blackops);
+  }
+
+  .btn-twitch-#{$c}:hover {
+    @include btn-hover(map-get($colors, $c), $twitch-blackops);
+  }
+
+  .bg-twitch-#{$c} {
+    @include bg(map-get($colors, $c));
+  }
+
+  .text-twitch-#{$c} {
+    @include text(map-get($colors, $c));
+  }
+}
