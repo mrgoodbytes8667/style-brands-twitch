@@ -28,20 +28,8 @@ $twitch-accent-zero: #1E69FF;
 
 @import "~@mrgoodbytes8667/style-brands/css/brand";
 
-$colors: (
+$twitch-colors-white-text: (
         purple : $twitch-purple,
-        muted-ice : $twitch-muted-ice,
-        muted-jiggle : $twitch-muted-jiggle,
-        muted-worm : $twitch-muted-worm,
-        muted-isabelle : $twitch-muted-isabelle,
-        muted-droid : $twitch-muted-droid,
-        muted-wipeout : $twitch-muted-wipeout,
-        muted-smoke : $twitch-muted-smoke,
-        muted-widow : $twitch-muted-widow,
-        muted-peach : $twitch-muted-peach,
-        muted-pac-man : $twitch-muted-pac-man,
-        muted-felicia : $twitch-muted-felicia,
-        muted-sonic : $twitch-muted-sonic,
         accent-dragon : $twitch-accent-dragon,
         accent-cuddle : $twitch-accent-cuddle,
         accent-bandit : $twitch-accent-bandit,
@@ -53,11 +41,23 @@ $colors: (
         accent-sniper : $twitch-accent-sniper,
         accent-egg : $twitch-accent-egg,
         accent-legend : $twitch-accent-legend,
-        accent-zero : $twitch-accent-zero,
+        accent-zero : $twitch-accent-zero
 );
 
-$twitch-colors-white: purple, accent-dragon, accent-cuddle, accent-bandit, accent-lightning, accent-ko, accent-mega, accent-nights, accent-osu, accent-sniper, accent-egg, accent-legend, accent-zero;
-$twitch-colors-black: muted-ice, muted-jiggle, muted-worm, muted-isabelle, muted-droid, muted-wipeout, muted-smoke, muted-widow, muted-peach, muted-pac-man, muted-felicia, muted-sonic;
+$twitch-colors-black-text: (
+        muted-ice : $twitch-muted-ice,
+        muted-jiggle : $twitch-muted-jiggle,
+        muted-worm : $twitch-muted-worm,
+        muted-isabelle : $twitch-muted-isabelle,
+        muted-droid : $twitch-muted-droid,
+        muted-wipeout : $twitch-muted-wipeout,
+        muted-smoke : $twitch-muted-smoke,
+        muted-widow : $twitch-muted-widow,
+        muted-peach : $twitch-muted-peach,
+        muted-pac-man : $twitch-muted-pac-man,
+        muted-felicia : $twitch-muted-felicia,
+        muted-sonic : $twitch-muted-sonic
+);
 
 .btn-twitch {
   @include btn($twitch-purple, $twitch-ice);
@@ -83,54 +83,62 @@ $twitch-colors-black: muted-ice, muted-jiggle, muted-worm, muted-isabelle, muted
   @include text($twitch-purple);
 }
 
-@each $c in $twitch-colors-white {
-  .btn-twitch-#{$c} {
-    @include btn(map-get($colors, $c), $twitch-ice);
+@each $name, $color in $twitch-colors-white-text {
+  .btn-twitch-#{$name} {
+    @include btn($color, $twitch-ice);
   }
 
-  .btn-twitch-#{$c}:hover {
-    @include btn-hover(map-get($colors, $c), $twitch-ice);
+  .btn-twitch-#{$name}:hover {
+    @include btn-hover($color, $twitch-ice);
   }
 
-  .bg-twitch-#{$c} {
-    @include bg(map-get($colors, $c));
+  .btn-twitch-#{$name}-inverse {
+    @include btn($twitch-ice, $color);
   }
 
-  .text-twitch-#{$c} {
-    @include text(map-get($colors, $c));
+  .btn-twitch-#{$name}-inverse:hover {
+    @include btn($color, $twitch-ice);
   }
 
-  .link-twitch-#{$c} > a {
-    @include link(map-get($colors, $c));
+  .bg-twitch-#{$name} {
+    @include bg($color);
   }
 
-  .link-twitch-#{$c}:hover > a {
-    @include link-hover(map-get($colors, $c));
+  .text-twitch-#{$name} {
+    @include text($color);
+  }
+
+  .link-twitch-#{$name} > a {
+    @include link($color);
+  }
+
+  .link-twitch-#{$name}:hover > a {
+    @include link-hover($color);
   }
 }
 
-@each $c in $twitch-colors-black {
-  .btn-twitch-#{$c} {
-    @include btn(map-get($colors, $c), $twitch-blackops);
+@each $name, $color in $twitch-colors-black-text {
+  .btn-twitch-#{$name} {
+    @include btn($color, $twitch-blackops);
   }
 
-  .btn-twitch-#{$c}:hover {
-    @include btn-hover(map-get($colors, $c), $twitch-blackops);
+  .btn-twitch-#{$name}:hover {
+    @include btn-hover($color, $twitch-blackops);
   }
 
-  .bg-twitch-#{$c} {
-    @include bg(map-get($colors, $c));
+  .bg-twitch-#{$name} {
+    @include bg($color);
   }
 
-  .text-twitch-#{$c} {
-    @include text(map-get($colors, $c));
+  .text-twitch-#{$name} {
+    @include text($color);
   }
 
-  .link-twitch-#{$c} > a {
-    @include link(map-get($colors, $c));
+  .link-twitch-#{$name} > a {
+    @include link($color);
   }
 
-  .link-twitch-#{$c}:hover > a {
-    @include link-hover(map-get($colors, $c));
+  .link-twitch-#{$name}:hover > a {
+    @include link-hover($color);
   }
 }
