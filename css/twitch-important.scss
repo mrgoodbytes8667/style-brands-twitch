@@ -1,0 +1,118 @@
+@import "variables";
+
+@import "~@mrgoodbytes8667/style-brands/css/brand-important";
+
+$twitch-colors-white-text: (
+        twitch-purple : $twitch-purple,
+        twitch-accent-dragon : $twitch-accent-dragon,
+        twitch-accent-cuddle : $twitch-accent-cuddle,
+        twitch-accent-bandit : $twitch-accent-bandit,
+        twitch-accent-lightning: $twitch-accent-lightning,
+        twitch-accent-ko : $twitch-accent-ko,
+        twitch-accent-mega : $twitch-accent-mega,
+        twitch-accent-nights : $twitch-accent-nights,
+        twitch-accent-osu : $twitch-accent-osu,
+        twitch-accent-sniper : $twitch-accent-sniper,
+        twitch-accent-egg : $twitch-accent-egg,
+        twitch-accent-legend : $twitch-accent-legend,
+        twitch-accent-zero : $twitch-accent-zero
+);
+
+$twitch-colors-black-text: (
+        twitch-muted-ice : $twitch-muted-ice,
+        twitch-muted-jiggle : $twitch-muted-jiggle,
+        twitch-muted-worm : $twitch-muted-worm,
+        twitch-muted-isabelle : $twitch-muted-isabelle,
+        twitch-muted-droid : $twitch-muted-droid,
+        twitch-muted-wipeout : $twitch-muted-wipeout,
+        twitch-muted-smoke : $twitch-muted-smoke,
+        twitch-muted-widow : $twitch-muted-widow,
+        twitch-muted-peach : $twitch-muted-peach,
+        twitch-muted-pac-man : $twitch-muted-pac-man,
+        twitch-muted-felicia : $twitch-muted-felicia,
+        twitch-muted-sonic : $twitch-muted-sonic
+);
+
+.btn-twitch-important {
+  @include btn-important($twitch-purple, $twitch-ice);
+}
+
+.btn-twitch-important:hover {
+  @include btn-hover-important($twitch-purple, $twitch-ice);
+}
+
+.btn-twitch-white-important {
+  @include btn-important($twitch-ice, $twitch-purple);
+}
+
+.btn-twitch-white-important:hover {
+  @include btn-hover-important($twitch-ice, $twitch-purple);
+}
+
+.bg-twitch-important {
+  @include bg-important($twitch-purple);
+}
+
+.text-twitch-important {
+  @include text-important($twitch-purple);
+}
+
+@each $name, $color in $twitch-colors-white-text {
+  .btn-#{$name}-important {
+    @include btn-important($color, $twitch-ice);
+  }
+
+  .btn-#{$name}-important:hover {
+    @include btn-hover-important($color, $twitch-ice);
+  }
+
+  .btn-#{$name}-inverse-important {
+    @include btn-important($twitch-ice, $color);
+  }
+
+  .btn-#{$name}-inverse-important:hover {
+    @include btn-important($color, $twitch-ice);
+  }
+
+  .bg-#{$name}-important {
+    @include bg-important($color);
+  }
+
+  .text-#{$name}-important {
+    @include text-important($color);
+  }
+
+  .link-#{$name} > a {
+    @include link-important($color);
+  }
+
+  .link-#{$name}:hover > a {
+    @include link-hover-important($color);
+  }
+}
+
+@each $name, $color in $twitch-colors-black-text {
+  .btn-#{$name}-important {
+    @include btn-important($color, $twitch-blackops);
+  }
+
+  .btn-#{$name}-important:hover {
+    @include btn-hover-important($color, $twitch-blackops);
+  }
+
+  .bg-#{$name}-important {
+    @include bg-important($color);
+  }
+
+  .text-#{$name}-important {
+    @include text-important($color);
+  }
+
+  .link-#{$name} > a {
+    @include link-important($color);
+  }
+
+  .link-#{$name}:hover > a {
+    @include link-hover-important($color);
+  }
+}
