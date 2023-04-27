@@ -57,6 +57,10 @@ $twitch-colors-black-text: (
   @include text($twitch-purple);
 }
 
+.border-twitch {
+  @include border($twitch-purple);
+}
+
 @each $name, $color in $twitch-colors-white-text {
   .btn-#{$name} {
     @include btn($color, $twitch-ice);
@@ -89,6 +93,10 @@ $twitch-colors-black-text: (
   .link-#{$name}:hover > a {
     @include link-hover($color);
   }
+
+  .border-#{$name} {
+    @include border($color);
+  }
 }
 
 @each $name, $color in $twitch-colors-black-text {
@@ -114,5 +122,9 @@ $twitch-colors-black-text: (
 
   .link-#{$name}:hover > a {
     @include link-hover($color);
+  }
+
+  .border-#{$name} {
+    @include border($color);
   }
 }
