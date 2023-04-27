@@ -6,6 +6,9 @@
   "author": "MrGoodBytes <bytes@goodbytes.live>",
   "license": "CC-BY-NC-4.0",
   "dependencies": {
-    "@mrgoodbytes8667/style-brands": "https://github.com/mrgoodbytes8667/style-brands#semver:^0.0.5"
-  }
+    "@mrgoodbytes8667/style-brands": "https://github.com/mrgoodbytes8667/style-brands#semver:^0.0.6"
+  },
+  "files": [
+    "css/*"
+  ]
 }
